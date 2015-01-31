@@ -1,7 +1,14 @@
 require 'test_helper'
 
 class GameRoundTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "play one round" do
+  	get games_path
+  	assert_response :success
+  	assert_difference 'Game.count', 1 do
+  		post games_path
+  	end
+  	follow_redirect!
+  	assert_template 'edit'
+    assert_select "form input"
+  end
 end
