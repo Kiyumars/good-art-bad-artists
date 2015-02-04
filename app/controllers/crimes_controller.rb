@@ -24,4 +24,29 @@ class CrimesController < ApplicationController
 		end
 		@artists.shuffle
 	end
+
+	def update
+		@selected_artist_id = params[:artist_id]
+		@crime_of_selected_artist = Artist.find(@selected_artist_id).crime.id
+		@correct_crime_id = params[:id]
+
+		if @crime_of_selected_artist.to_s == @correct_crime_id
+			@answer = "Correct!"
+		else
+			@answer = "Wrong!"
+		end
+
+		# if Artist.find(selected_artist_id).crime.to_s  == params[:id]
+		# 	@answer = "Correct!"
+
+		# else
+		# 	@answer = "Wrong!"
+		# end
+				# if Crime.find(selected_artist_id).crime == params[:id].to_i
+		# 	@answer = "Correct!"
+		# else
+		# 	@answer = "Wrong!"
+		# end
+	end
+
 end

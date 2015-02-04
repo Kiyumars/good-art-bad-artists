@@ -1,5 +1,9 @@
 <h1><%= @crime %></h1>
-<% @artists.shuffle.each do |artist| %>
-	<img src="<%= artist.image %>" height=250> <%= artist.name %>
+
+	<% @artists.shuffle.each do |artist| %>
+		<%= form_tag game_crime_path, method: "patch" do %>
+	  	<%= hidden_field_tag(:artist_id, artist.id) %>
+			<input type="image" src="<%= artist.image %>" name='<%= artist.id %>' height=250> <%= artist.name %>
+	<%end%>
 <%end%>
 
