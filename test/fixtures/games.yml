@@ -1,13 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  player_name: MyString
-  score: 1
-  rounds: 1
-  correct_guesses: 1
+first_game:
+  rounds: 0
+  correct_guesses: 0
 
-two:
-  player_name: MyString
-  score: 1
-  rounds: 1
-  correct_guesses: 1
+

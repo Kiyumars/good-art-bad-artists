@@ -9,6 +9,8 @@ class CrimesController < ApplicationController
 		@crimes_list = (1..Crime.all.count).to_a
 		@artists = Array.new
 
+		@crime = Crime.find(params[:id]).charge
+
 		artist = Crime.find(params[:id]).artists.sample
 		@crimes_list.delete(artist.crime_id)
 		@artists.push(artist)
@@ -20,5 +22,6 @@ class CrimesController < ApplicationController
 			@crimes_list.delete(random_crime)
 			@artists.push(artist)
 		end
+		@artists.shuffle
 	end
 end

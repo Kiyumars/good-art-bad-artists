@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GameRoundTest < ActionDispatch::IntegrationTest
   test "play one round" do
-  	get games_path
+  	get new_game_path
   	assert_response :success
   	assert_difference 'Game.count', 1 do
   		post games_path
