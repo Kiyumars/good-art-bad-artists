@@ -32,6 +32,7 @@ class CrimesController < ApplicationController
 
 		if @crime_of_selected_artist.to_s == @correct_crime_id
 			@answer = "Correct!"
+			@crime_link = Artist.find(@selected_artist_id).url
 		else
 			@answer = "Wrong!"
 		end
