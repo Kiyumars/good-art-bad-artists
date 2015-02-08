@@ -15,3 +15,9 @@ a.new_round {
 	text-align:center;
 	font-size: 24px;
 }
+
+input[type=submit].start-game {
+	position: absolute; /* or absolute */
+  left: 40%;
+	font-size: 24px;
+}
