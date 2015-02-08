@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+header {
+	background-color: LightGray;
+}
+
 a.new_round {
 	display:block;
 	text-align:center;
